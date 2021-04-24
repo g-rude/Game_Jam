@@ -4,7 +4,7 @@ var player = null
 onready var ray = $RayCast2D
 export var speed = 200
 export var looking_speed = 100
-export var lives = 3
+export var damage = 10
 
 func _physics_process(_delta):
 	if player == null:
@@ -21,5 +21,5 @@ func _physics_process(_delta):
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
-		body.do_damage(lives)
+		body.do_damage(damage)
 		queue_free()
